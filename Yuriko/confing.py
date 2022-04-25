@@ -1,5 +1,5 @@
 from envparse import env
-from Yuriko import LOGGER
+from Sherry import LOGGER
 
 DEFAULTS = {
     "LOAD_MODULES": True,
