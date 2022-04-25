@@ -64,12 +64,12 @@ RUN apt update && apt upgrade -y && \
 # Pypi package Repo upgrade
 RUN pip3 install --upgrade pip setuptools
 
-# Copy Python Requirements to /root/Yuriko 
-RUN git clone -b master https://github.com/TeamDeeCode/Yuriko /root/Yuriko
-WORKDIR /root/Yuriko
+# Copy Python Requirements to /root/Sherry 
+RUN git clone -b master https://github.com/theend-alpha/Sherry /root/Sherry
+WORKDIR /root/Sherry
 
 #Copy config file to /root/Yuriko/Yuriko
-COPY ./Yuriko/sample_config.py ./Yuriko/config.py* /root/Yuriko/Yuriko/
+COPY ./Sherry/sample_config.py ./Sherry/config.py* /root/Sherry/Sherry/
 
 ENV PATH="/home/bot/bin:$PATH"
 
@@ -77,4 +77,4 @@ ENV PATH="/home/bot/bin:$PATH"
 RUN pip3 install -U -r requirements.txt
 
 # Starting Worker
-CMD ["python3","-m","Yuriko"]
+CMD ["python3","-m","Sherry"]
